@@ -17,6 +17,8 @@
 		842969771D49F739003094D0 /* PageContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842969761D49F739003094D0 /* PageContentViewController.xib */; };
 		8429697A1D49F7BB003094D0 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842969791D49F7BB003094D0 /* PageContentViewController.m */; };
 		8429697D1D49F868003094D0 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8429697C1D49F868003094D0 /* ModelController.m */; };
+		F5B34DC41D4A7055008CEFA9 /* SubjectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5B34DC31D4A7055008CEFA9 /* SubjectTableViewCell.xib */; };
+		F5B34DC71D4A70BF008CEFA9 /* SubjectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B34DC61D4A70BF008CEFA9 /* SubjectTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,9 @@
 		8429697B1D49F868003094D0 /* ModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
 		8429697C1D49F868003094D0 /* ModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
 		EE1F2F2FE56BCE78871B1A17 /* Pods-FSCalendarAndPageControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSCalendarAndPageControl.release.xcconfig"; path = "Pods/Target Support Files/Pods-FSCalendarAndPageControl/Pods-FSCalendarAndPageControl.release.xcconfig"; sourceTree = "<group>"; };
+		F5B34DC31D4A7055008CEFA9 /* SubjectTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubjectTableViewCell.xib; sourceTree = "<group>"; };
+		F5B34DC51D4A70BF008CEFA9 /* SubjectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectTableViewCell.h; sourceTree = "<group>"; };
+		F5B34DC61D4A70BF008CEFA9 /* SubjectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +88,9 @@
 				842969761D49F739003094D0 /* PageContentViewController.xib */,
 				8429697B1D49F868003094D0 /* ModelController.h */,
 				8429697C1D49F868003094D0 /* ModelController.m */,
+				F5B34DC51D4A70BF008CEFA9 /* SubjectTableViewCell.h */,
+				F5B34DC61D4A70BF008CEFA9 /* SubjectTableViewCell.m */,
+				F5B34DC31D4A7055008CEFA9 /* SubjectTableViewCell.xib */,
 				842969671D49EE00003094D0 /* Assets.xcassets */,
 				8429696C1D49EE00003094D0 /* Info.plist */,
 				8429695B1D49EE00003094D0 /* Supporting Files */,
@@ -177,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				842969751D49F066003094D0 /* Launch Screen.storyboard in Resources */,
+				F5B34DC41D4A7055008CEFA9 /* SubjectTableViewCell.xib in Resources */,
 				842969771D49F739003094D0 /* PageContentViewController.xib in Resources */,
 				842969731D49EE11003094D0 /* RootViewController.xib in Resources */,
 				842969681D49EE00003094D0 /* Assets.xcassets in Resources */,
@@ -238,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5B34DC71D4A70BF008CEFA9 /* SubjectTableViewCell.m in Sources */,
 				842969631D49EE00003094D0 /* RootViewController.m in Sources */,
 				8429697A1D49F7BB003094D0 /* PageContentViewController.m in Sources */,
 				8429697D1D49F868003094D0 /* ModelController.m in Sources */,

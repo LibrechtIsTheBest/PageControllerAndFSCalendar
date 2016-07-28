@@ -4,7 +4,7 @@
 #import "PageContentViewController.h"
 #import "FSCalendar.h"
 
-@interface RootViewController () <FSCalendarDelegate>
+@interface RootViewController () <UIPageViewControllerDelegate, FSCalendarDelegate>
 
 @property (strong, nonatomic) IBOutlet FSCalendar *calendarView;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *calendarHeightConstraint;
@@ -29,11 +29,11 @@
     // Do any additional setup after loading the view, typically from a nib.
     // Configure the page view controller and add it as a child view controller.
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-//    self.pageViewController.delegate = self;
+    self.pageViewController.delegate = self;
     
-    
-    
-    PageContentViewController *startingViewController = [self.modelController viewControllerAtIndex:0];
+//    PageContentViewController *startingViewController = [self.modelController viewControllerAtIndex:0];
+    PageContentViewController *startingViewController = [self.modelController viewControllerForDate:[NSDate date]];
+
     
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
@@ -56,7 +56,8 @@
      */
     self.calendarView.scope = FSCalendarScopeWeek;
     self.calendarView.locale = [NSLocale localeWithLocaleIdentifier:@"ru-RU"];
-    self.calendarView.firstWeekday = 2;
+    [self.calendarView.appearance setHeaderDateFormat:@"LLLL yyyy"];
+    self.calendarView.firstWeekday = 1;
     [self.calendarView selectDate:[NSDate date]];
 }
 
@@ -82,7 +83,15 @@
 
 - (void)calendar:(FSCalendar *)calendar didSelectDate:(NSDate *)date
 {
-    NSLog(@"did select date %@",[calendar stringFromDate:date format:@"yyyy/MM/dd"]);
+//    NSLog(@"did select date %@", [calendar stringFromDate:date format:@"yyyy/MM/dd"]);
+    
+    NSLog(@"did select date %@", date);
+    
+    PageContentViewController *p = [self.modelController viewControllerForDate:date];
+    
+    NSLog(@"%@", p.contentObject);
+    
+    [self.pageViewController setViewControllers:@[p] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:NULL];
     
 //    self.subjects = [self.timeTable subjectsAtDate:self.calendarView.selectedDate];
 //    [self.subjectsTableView reloadData];
@@ -93,4 +102,13 @@
     NSLog(@"%s %@", __FUNCTION__, [calendar stringFromDate:calendar.currentPage]);
 }
 
+#pragma mark - UIPageViewControllerDelegate
+
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed
+{
+    NSLog(@"%d %d\n%@", finished, completed, ((PageContentViewController *)pageViewController.viewControllers.firstObject).contentObject);
+    [self.calendarView selectDate:((PageContentViewController *)pageViewController.viewControllers.firstObject).contentObject];
+}
+
 @end
+

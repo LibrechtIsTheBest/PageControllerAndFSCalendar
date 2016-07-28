@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PageContentViewController">
             <connections>
                 <outlet property="label" destination="Kau-zr-zHr" id="wrh-Kw-1MN"/>
+                <outlet property="tableView" destination="XMg-x1-3kY" id="65r-ry-XrY"/>
                 <outlet property="view" destination="iN0-l3-epB" id="By5-MZ-99G"/>
             </connections>
         </placeholder>
@@ -16,21 +17,24 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XMg-x1-3kY">
+                    <rect key="frame" x="8" y="37" width="359" height="622"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="W2G-Mf-osl"/>
+                    </connections>
+                </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kau-zr-zHr">
-                    <rect key="frame" x="8" y="73" width="359" height="21"/>
+                    <rect key="frame" x="8" y="8" width="359" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XMg-x1-3kY">
-                    <rect key="frame" x="8" y="102" width="359" height="557"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="0.98265159560000004" blue="0.40131376219999998" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="XMg-x1-3kY" secondAttribute="trailing" constant="8" id="AiL-LF-E4W"/>
-                <constraint firstItem="Kau-zr-zHr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="73" id="BJJ-Q4-4Wh"/>
+                <constraint firstItem="Kau-zr-zHr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="BJJ-Q4-4Wh"/>
                 <constraint firstItem="Kau-zr-zHr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="BVb-0T-LUe"/>
                 <constraint firstAttribute="bottom" secondItem="XMg-x1-3kY" secondAttribute="bottom" constant="8" id="a7U-ND-1zF"/>
                 <constraint firstItem="XMg-x1-3kY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="iJm-kw-Mzb"/>

@@ -23,11 +23,6 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="258" id="e3W-iD-C8W"/>
                     </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="firstWeekday">
-                            <integer key="value" value="2"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="delegate" destination="-1" id="bYz-yb-0PK"/>
                     </connections>
