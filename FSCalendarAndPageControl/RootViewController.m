@@ -57,7 +57,7 @@
     self.calendarView.scope = FSCalendarScopeWeek;
     self.calendarView.locale = [NSLocale localeWithLocaleIdentifier:@"ru-RU"];
     [self.calendarView.appearance setHeaderDateFormat:@"LLLL yyyy"];
-    self.calendarView.firstWeekday = 1;
+    self.calendarView.firstWeekday = 2;
     [self.calendarView selectDate:[NSDate date]];
 }
 
@@ -87,7 +87,7 @@
     
     NSLog(@"did select date %@", date);
     
-    PageContentViewController *p = [self.modelController viewControllerForDate:date];
+    PageContentViewController *p = [self.modelController viewControllerForDate:[date dateByAddingTimeInterval:24*60*60]];
     
     NSLog(@"%@", p.contentObject);
     
@@ -107,7 +107,9 @@
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed
 {
     NSLog(@"%d %d\n%@", finished, completed, ((PageContentViewController *)pageViewController.viewControllers.firstObject).contentObject);
-    [self.calendarView selectDate:((PageContentViewController *)pageViewController.viewControllers.firstObject).contentObject];
+    
+//    [self.calendarView deselectDate:((PageContentViewController *)pageViewController.viewControllers.firstObject).contentObject];
+    [self.calendarView selectDate:[((PageContentViewController *)pageViewController.viewControllers.firstObject).contentObject dateByAddingTimeInterval:(-24*60*60)]];
 }
 
 @end

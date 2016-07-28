@@ -23,7 +23,8 @@
     [super viewWillAppear:animated];
     self.label.text = [self.contentObject description];
     
-    [self.tableView reloadData];
+    self.tableView.rowHeight = 114.5;
+//    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource
@@ -36,6 +37,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SubjectTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SubjectTableViewCell"];
+    
+    if (cell == nil) {
+        
+        [tableView registerNib:[UINib nibWithNibName:@"SubjectTableViewCell" bundle:nil] forCellReuseIdentifier:@"SubjectTableViewCell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"SubjectTableViewCell"];
+    }
     
     cell.nameLabel.text = @"name";
     cell.roomLabel.text = @"room";
